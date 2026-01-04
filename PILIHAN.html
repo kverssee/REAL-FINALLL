@@ -1,63 +1,87 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Pilih Dulu 💬</title>
-    <style>
-        body {
-        font-family: Arial, sans-serif;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background: #ffe6f0;
-        margin: 0;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pilih Dulu 💬</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: #ffe6f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
 
-        .box {
-            background-color: rgba(255,255,255,0.9);
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
-            transition: transform 0.1s;
-        }
+/* Box utama full screen-ish */
+.box {
+    background: white;
+    padding: 40px 25px;
+    width: 95%;        /* Hampir full layar HP */
+    max-width: 500px;  /* Tetap rapi di laptop */
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
 
-        h2 {
-            margin-bottom: 20px;
-        }
+/* Heading besar */
+h2 {
+    margin-bottom: 25px;
+    font-size: 24px;
+}
 
-        button {
-              margin-top: 20px;
-        padding: 10px 20px;
-        font-size: 16px;
-        border-radius: 8px;
-        border: none;
-        background-color: #ff6f61;
-        color: #fff;
-        cursor: pointer;
-        }
+/* Tombol besar untuk HP */
+button {
+    width: 100%;
+    padding: 18px;     /* Lebih besar supaya gampang di-tap */
+    margin-top: 15px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+}
 
-        #opsi1 {
-            background: #ffd1dc;
-        }
+#opsi1 {
+    background: #ffd1dc;
+}
 
-        #opsi2 {
-            background: #cce5ff;
-        }
+#opsi2 {
+    background: #cce5ff;
+}
 
-        #lanjutBtn {
-            background: #c8f7c5;
-            display: none;
-        }
+#lanjutBtn {
+    background: #c8f7c5;
+    display: none;
+    margin-top: 20px;
+}
 
-        #message {
-            margin-top: 20px;
-            font-size: 16px;
-            color: #444;
-        }
-    </style>
+#message {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #444;
+}
+
+/* Media Queries untuk layar HP kecil */
+@media screen and (max-width: 480px) {
+    .box {
+        padding: 35px 20px;
+    }
+    h2 {
+        font-size: 22px;
+    }
+    button {
+        font-size: 17px;
+        padding: 16px;
+    }
+    #message {
+        font-size: 15px;
+    }
+}
+</style>
 </head>
 <body>
 
@@ -72,25 +96,24 @@
 </div>
 
 <script>
-    const opsi1 = document.getElementById("opsi1");
-    const opsi2 = document.getElementById("opsi2");
-    const message = document.getElementById("message");
-    const lanjutBtn = document.getElementById("lanjutBtn");
+const opsi1 = document.getElementById("opsi1");
+const opsi2 = document.getElementById("opsi2");
+const message = document.getElementById("message");
+const lanjutBtn = document.getElementById("lanjutBtn");
 
-    opsi1.addEventListener("click", () => {
-        message.textContent = "Aduh ga bisa nih, harus liat tayangannya dulu deh 😅";
-        lanjutBtn.style.display = "block";
-    });
+opsi1.addEventListener("click", () => {
+    message.textContent = "Aduh ga bisa nih, harus liat tayangannya dulu deh 😅";
+    lanjutBtn.style.display = "block";
+});
 
-    lanjutBtn.addEventListener("click", () => {
-        window.location.href = "TAYANGAN.html";
-    });
+lanjutBtn.addEventListener("click", () => {
+    window.location.href = "TAYANGAN.html";
+});
 
-    opsi2.addEventListener("click", () => {
-        window.location.href = "TAYANGAN.html";
-    });
+opsi2.addEventListener("click", () => {
+    window.location.href = "TAYANGAN.html";
+});
 </script>
 
 </body>
 </html>
-
